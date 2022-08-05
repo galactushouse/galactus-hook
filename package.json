@@ -1,0 +1,27 @@
+{
+  "name": "galactus-hook",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/galactushouse/galactus-hook.git",
+  "author": "Bruno Martins <brunomart97@hotmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react-hooks",
+    "galactus-hook",
+    "typescript",
+    "react",
+    "npm"
+  ],
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.4",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  }
+}
