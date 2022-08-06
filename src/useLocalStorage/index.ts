@@ -1,27 +1,31 @@
-import { useState, useMemo } from 'react'
-
-const useLocalStorage = ({
-  localStorageKey,
-  localStorageValue
-}: UseLocalStorageProps) => {
-  const [initialValue, setInitialValue] = useState(localStorageValue)
-
-  const readLocalStorage = useMemo(() => {
+const useLocalStorage = (): UseLocalStorageReturn => {
+  const readLocalStorage = (key: string) => {
     if (!window) {
-      return initialValue
+      return null
     }
 
     try {
-      const key = window.localStorage.getItem(localStorageKey)
-      return key ? JSON.parse(key) : initialValue
+      const localStorageValue = window.localStorage.getItem(key)
+      return localStorageValue ? localStorageValue : null
     } catch (error) {
-      console.warn(
-        `Error when trying to set ${localStorageKey} key in localStorage`
-      )
+      console.warn(`Error trying to read key ${key} in localStorage!`)
+      return null
     }
-  }, [initialValue])
+  }
 
-  return { readLocalStorage, setInitialValue }
+  const setLocalStorage = (key: string, value: unknown) => {
+    if (!window) {
+      return
+    }
+
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value))
+    } catch (error) {
+      console.warn(`Error when trying to set the key ${key} in localStorage!`)
+    }
+  }
+
+  return { readLocalStorage, setLocalStorage }
 }
 
 export default useLocalStorage
