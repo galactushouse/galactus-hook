@@ -1,4 +1,6 @@
 interface UseLocalStorageReturn {
-  readLocalStorage: (key: string) => string | null
-  setLocalStorage: (key: string, value: unknown) => void
+  addLocalStorage: (key: string, value: unknown, action: string) => void
+  editLocalStorage: (key: string, value: unknown, action: string) => void
+  readLocalStorage: (key: string) => string | null | undefined
+  removeLocalStorage: (key: string) => void
 }
