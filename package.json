@@ -1,10 +1,26 @@
 {
-  "name": "galactus-hook",
-  "version": "0.0.1",
-  "main": "index.js",
-  "repository": "https://github.com/galactushouse/galactus-hook.git",
-  "author": "Bruno Martins <brunomart97@hotmail.com>",
+  "name": "@galactushouse/galactus-hook",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Galactus House <galactushouse@gmail.com> (https://github.com/galactushouse)",
+  "description": "Ready-to-use hook library",
   "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --declaration"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/galactushouse/galactus-hook"
+  },
+  "homepage": "https://github.com/galactushouse/galactus-hook/#readme",
+  "bugs": {
+    "url": "https://github.com/galactushouse/galactus-hook/issues"
+  },
   "keywords": [
     "react-hooks",
     "galactus-hook",
