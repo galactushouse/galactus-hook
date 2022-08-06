@@ -20,6 +20,10 @@ const useLocalStorage = (): UseLocalStorageReturn => {
     setLocalStorage(key, value, 'create')
   }
 
+  const editLocalStorage = (key: string, value: unknown) => {
+    setLocalStorage(key, value, 'edit')
+  }
+
   const readLocalStorage = (key: string) => {
     if (!window) {
       return
@@ -48,7 +52,12 @@ const useLocalStorage = (): UseLocalStorageReturn => {
     }
   }
 
-  return { addLocalStorage, readLocalStorage, removeLocalStorage }
+  return {
+    addLocalStorage,
+    editLocalStorage,
+    readLocalStorage,
+    removeLocalStorage
+  }
 }
 
 export default useLocalStorage
