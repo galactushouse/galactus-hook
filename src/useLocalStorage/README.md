@@ -111,3 +111,35 @@ const MyComponent = () => {
 
 export default MyComponent
 ```
+
+* readLocalStorage
+
+  Using the readLocalStorage function you can fetch data already saved in the browser's local storage, save it in a variable and even show it to the user.
+
+```javascript
+import React, { useState } from 'react'
+
+import { useLocalStorage } from '@galactushouse/galactus-hook'
+
+const MyComponent = () => {
+  const [myPet, setMyPet] = useState('')
+  const { readLocalStorage } = useLocalStorage()
+
+  const handleGetPetName = () => {
+    const getPetName = readLocalStorage('petName')
+
+    if (getPetName) {
+      setMyPet(getPetName)
+    }
+  }
+
+  return (
+    <>
+      <span>{myPet}</span>
+      ...
+    </>
+  )
+}
+
+export default MyComponent
+```
