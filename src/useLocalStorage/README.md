@@ -41,7 +41,9 @@ const MyComponent = () => {
 
 ### Examples
 
-- addLocalStorage
+* addLocalStorage
+
+  Using the addLocalStorage function you can save data to the browser's local storage.
 
 ```javascript
 import React, { useState } from 'react'
@@ -80,4 +82,32 @@ const MyComponent = () => {
 export default MyComponent
 ```
 
-Your data will be saved in your browser's local storage.
+* editLocalStorage
+
+  Using the editLocalStorage function you can edit data already saved in the browser's local storage.
+
+```javascript
+import React, { useState } from 'react'
+
+import { useLocalStorage } from '@galactushouse/galactus-hook'
+
+const MyComponent = () => {
+  const [myPet, setMyPet] = useState('')
+  const { editLocalStorage } = useLocalStorage()
+
+  const handleEditPetName = () => {
+    setMyPet(newPetName)
+  }
+
+  const handleLocalStorage = (event: React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    editLocalStorage('petName', myPet)
+  }
+
+  return (
+    ...
+  )
+}
+
+export default MyComponent
+```
