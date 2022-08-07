@@ -43,7 +43,12 @@ const MyComponent = () => {
 
 * addLocalStorage
 
-  Using the `addLocalStorage` function you can save data to the browser's local storage.
+Using the `addLocalStorage` function you can save data to the browser's local storage.
+
+| Parameters | Type | Require | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | ✓ | Key name to be saved to local storage. |
+| `value` | `unknown` | ✓ | Value to be saved in local storage. |
 
 ```javascript
 import React, { useState } from 'react'
@@ -84,7 +89,12 @@ export default MyComponent
 
 * editLocalStorage
 
-  Using the `editLocalStorage` function you can edit data already saved in the browser's local storage.
+Using the `editLocalStorage` function you can edit data already saved in the browser's local storage.
+
+| Parameters | Type | Require | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | ✓ | Key name referring to the data to be edited in local storage. |
+| `value` | `unknown` | ✓ | Value to edit in local storage. |
 
 ```javascript
 import React, { useState } from 'react'
@@ -114,7 +124,11 @@ export default MyComponent
 
 * readLocalStorage
 
-  Using the `readLocalStorage` function you can fetch data already saved in the browser's local storage, save it in a variable and even show it to the user.
+Using the `readLocalStorage` function you can fetch data already saved in the browser's local storage, save it in a variable and even show it to the user.
+
+| Parameters | Type | Require | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | ✓ | Key name referring to the data to be fetched from local storage. |
 
 ```javascript
 import React, { useState } from 'react'
@@ -146,7 +160,11 @@ export default MyComponent
 
 * removeLocalStorage
 
-  Using the `removeLocalStorage` function you can delete data already saved in the browser's local storage.
+Using the `removeLocalStorage` function you can delete data already saved in the browser's local storage.
+
+| Parameters | Type | Require | Description |
+| --- | --- | --- | --- |
+| `key` | `string` | ✓ | Name of the key to be deleted from local storage along with its value. |
 
 ```javascript
 import { useLocalStorage } from '@galactushouse/galactus-hook'
