@@ -43,7 +43,7 @@ const MyComponent = () => {
 
 * addLocalStorage
 
-  Using the addLocalStorage function you can save data to the browser's local storage.
+  Using the `addLocalStorage` function you can save data to the browser's local storage.
 
 ```javascript
 import React, { useState } from 'react'
@@ -84,7 +84,7 @@ export default MyComponent
 
 * editLocalStorage
 
-  Using the editLocalStorage function you can edit data already saved in the browser's local storage.
+  Using the `editLocalStorage` function you can edit data already saved in the browser's local storage.
 
 ```javascript
 import React, { useState } from 'react'
@@ -114,7 +114,7 @@ export default MyComponent
 
 * readLocalStorage
 
-  Using the readLocalStorage function you can fetch data already saved in the browser's local storage, save it in a variable and even show it to the user.
+  Using the `readLocalStorage` function you can fetch data already saved in the browser's local storage, save it in a variable and even show it to the user.
 
 ```javascript
 import React, { useState } from 'react'
@@ -139,6 +139,25 @@ const MyComponent = () => {
       ...
     </>
   )
+}
+
+export default MyComponent
+```
+
+* removeLocalStorage
+
+  Using the `removeLocalStorage` function you can delete data already saved in the browser's local storage.
+
+```javascript
+import { useLocalStorage } from '@galactushouse/galactus-hook'
+
+const MyComponent = () => {
+  const { removeLocalStorage } = useLocalStorage()
+
+  const handleDeletePetName = () => {
+    removeLocalStorage('petName')
+  }
+  ...
 }
 
 export default MyComponent
