@@ -28,7 +28,7 @@
     "react",
     "npm"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.2.0"
   },
   "devDependencies": {
