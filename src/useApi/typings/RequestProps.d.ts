@@ -1,6 +1,6 @@
 interface RequestProps {
   url: string
-  method: string
+  method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
   headers?: {}
   body?: {}
   cache?:

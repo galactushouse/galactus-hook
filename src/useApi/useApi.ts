@@ -8,7 +8,7 @@ const useApi = () => {
     },
     body,
     cache = 'default'
-  }: RequestProps) => {
+  }: RequestProps): Promise<UseApiReturn> => {
     const response = await fetch(url, {
       method,
       headers,
@@ -32,7 +32,16 @@ const useApi = () => {
     return response
   }
 
-  return {}
+  return {
+    get: ({ url, headers, cache }: RequestProps) => {
+      request({
+        url,
+        method: 'GET',
+        headers,
+        cache
+      })
+    }
+  }
 }
 
 export default useApi

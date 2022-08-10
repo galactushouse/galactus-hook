@@ -1,0 +1,3 @@
+interface UseApiReturn {
+  get: () => void
+}
