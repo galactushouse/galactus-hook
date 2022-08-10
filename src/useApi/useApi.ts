@@ -58,6 +58,15 @@ const useApi = () => {
         body,
         cache
       })
+    },
+    patch: ({ url, headers, body, cache }: RequestProps) => {
+      request({
+        url,
+        method: 'PATCH',
+        headers,
+        body,
+        cache
+      })
     }
   }
 }
