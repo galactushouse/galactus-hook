@@ -3,4 +3,5 @@ interface UseApiReturn {
   post: () => void
   put: () => void
   patch: () => void
+  delete: () => void
 }

@@ -67,6 +67,14 @@ const useApi = () => {
         body,
         cache
       })
+    },
+    delete: ({ url, headers, cache }: RequestProps) => {
+      request({
+        url,
+        method: 'DELETE',
+        headers,
+        cache
+      })
     }
   }
 }
