@@ -1,5 +1,5 @@
 const useApi = () => {
-  const request = async ({
+  const handleRequest = async ({
     url,
     method,
     headers = {
@@ -32,50 +32,60 @@ const useApi = () => {
     return response
   }
 
+  const getRequest = ({ url, headers, cache }: RequestProps) => {
+    handleRequest({
+      url,
+      method: 'GET',
+      headers,
+      cache
+    })
+  }
+
+  const postRequest = ({ url, headers, body, cache }: RequestProps) => {
+    handleRequest({
+      url,
+      method: 'POST',
+      headers,
+      body,
+      cache
+    })
+  }
+
+  const putRequest = ({ url, headers, body, cache }: RequestProps) => {
+    handleRequest({
+      url,
+      method: 'PUT',
+      headers,
+      body,
+      cache
+    })
+  }
+
+  const patchRequest = ({ url, headers, body, cache }: RequestProps) => {
+    handleRequest({
+      url,
+      method: 'PATCH',
+      headers,
+      body,
+      cache
+    })
+  }
+
+  const deleteRequest = ({ url, headers, cache }: RequestProps) => {
+    handleRequest({
+      url,
+      method: 'DELETE',
+      headers,
+      cache
+    })
+  }
+
   return {
-    get: ({ url, headers, cache }: RequestProps) => {
-      request({
-        url,
-        method: 'GET',
-        headers,
-        cache
-      })
-    },
-    post: ({ url, headers, body, cache }: RequestProps) => {
-      request({
-        url,
-        method: 'POST',
-        headers,
-        body,
-        cache
-      })
-    },
-    put: ({ url, headers, body, cache }: RequestProps) => {
-      request({
-        url,
-        method: 'PUT',
-        headers,
-        body,
-        cache
-      })
-    },
-    patch: ({ url, headers, body, cache }: RequestProps) => {
-      request({
-        url,
-        method: 'PATCH',
-        headers,
-        body,
-        cache
-      })
-    },
-    delete: ({ url, headers, cache }: RequestProps) => {
-      request({
-        url,
-        method: 'DELETE',
-        headers,
-        cache
-      })
-    }
+    getRequest,
+    postRequest,
+    putRequest,
+    patchRequest,
+    deleteRequest
   }
 }
 
