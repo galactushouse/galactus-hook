@@ -44,7 +44,16 @@ const useApi = () => {
     post: ({ url, headers, body, cache }: RequestProps) => {
       request({
         url,
-        method: 'GET',
+        method: 'POST',
+        headers,
+        body,
+        cache
+      })
+    },
+    put: ({ url, headers, body, cache }: RequestProps) => {
+      request({
+        url,
+        method: 'PUT',
         headers,
         body,
         cache
