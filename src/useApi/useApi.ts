@@ -40,6 +40,15 @@ const useApi = () => {
         headers,
         cache
       })
+    },
+    post: ({ url, headers, body, cache }: RequestProps) => {
+      request({
+        url,
+        method: 'GET',
+        headers,
+        body,
+        cache
+      })
     }
   }
 }
