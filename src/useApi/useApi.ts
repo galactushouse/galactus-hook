@@ -1,38 +1,44 @@
-const useApi = () => {
+const useApi = (): UseApiReturn => {
   const handleRequest = async ({
     url,
     method,
-    headers = {
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-    },
+    headers,
     body,
-    cache = 'default'
-  }: RequestProps): Promise<UseApiReturn> => {
+    cache
+  }: HandleRequestProps) => {
     const response = await fetch(url, {
       method,
-      headers,
+      headers: !!headers
+        ? headers
+        : {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
       body: !!body ? JSON.stringify(body) : null,
-      cache
-    }).then((response: Response) => {
-      if (response.status !== 200 && response.status !== 204) {
-        return console.error(
-          'Error when trying to make a request to the API: ',
-          response
-        )
-      }
-
-      if (response.status === 204) {
-        return
-      }
-
-      return response.json()
+      cache: !!cache ? cache : 'default'
     })
+      .then((response: Response) => {
+        if (response.status !== 200 && response.status !== 204) {
+          return console.error(
+            'Error when trying to make a request to the API: ',
+            response
+          )
+        }
+
+        if (response.status === 204) {
+          return
+        }
+
+        return response.json()
+      })
+      .then((data: JSON) => {
+        return data
+      })
 
     return response
   }
 
-  const getRequest = ({ url, headers, cache }: RequestProps) => {
+  const getRequest = (url: string, headers?: Headers, cache?: RequestCache) => {
     handleRequest({
       url,
       method: 'GET',
@@ -41,7 +47,12 @@ const useApi = () => {
     })
   }
 
-  const postRequest = ({ url, headers, body, cache }: RequestProps) => {
+  const postRequest = (
+    url: string,
+    headers?: Headers,
+    body?: Body,
+    cache?: RequestCache
+  ) => {
     handleRequest({
       url,
       method: 'POST',
@@ -51,7 +62,12 @@ const useApi = () => {
     })
   }
 
-  const putRequest = ({ url, headers, body, cache }: RequestProps) => {
+  const putRequest = (
+    url: string,
+    headers?: Headers,
+    body?: Body,
+    cache?: RequestCache
+  ) => {
     handleRequest({
       url,
       method: 'PUT',
@@ -61,7 +77,12 @@ const useApi = () => {
     })
   }
 
-  const patchRequest = ({ url, headers, body, cache }: RequestProps) => {
+  const patchRequest = (
+    url: string,
+    headers?: Headers,
+    body?: Body,
+    cache?: RequestCache
+  ) => {
     handleRequest({
       url,
       method: 'PATCH',
@@ -71,7 +92,11 @@ const useApi = () => {
     })
   }
 
-  const deleteRequest = ({ url, headers, cache }: RequestProps) => {
+  const deleteRequest = (
+    url: string,
+    headers?: Headers,
+    cache?: RequestCache
+  ) => {
     handleRequest({
       url,
       method: 'DELETE',
