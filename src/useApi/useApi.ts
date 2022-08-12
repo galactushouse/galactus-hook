@@ -18,7 +18,11 @@ const useApi = (): UseApiReturn => {
       cache: !!cache ? cache : 'default'
     })
       .then((response: Response) => {
-        if (response.status !== 200 && response.status !== 201) {
+        if (
+          response.status !== 200 &&
+          response.status !== 201 &&
+          response.status !== 202
+        ) {
           return console.error(
             'Error when trying to make a request to the API: ',
             response
