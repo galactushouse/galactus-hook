@@ -38,71 +38,85 @@ const useApi = (): UseApiReturn => {
     return response
   }
 
-  const getRequest = (url: string, headers?: Headers, cache?: RequestCache) => {
-    handleRequest({
+  const getRequest = async (
+    url: string,
+    headers?: Headers,
+    cache?: RequestCache
+  ) => {
+    const response = await handleRequest({
       url,
       method: 'GET',
       headers,
       cache
     })
+
+    return response
   }
 
-  const postRequest = (
+  const postRequest = async (
     url: string,
     headers?: Headers,
     body?: Body,
     cache?: RequestCache
   ) => {
-    handleRequest({
+    const response = await handleRequest({
       url,
       method: 'POST',
       headers,
       body,
       cache
     })
+
+    return response
   }
 
-  const putRequest = (
+  const putRequest = async (
     url: string,
     headers?: Headers,
     body?: Body,
     cache?: RequestCache
   ) => {
-    handleRequest({
+    const response = await handleRequest({
       url,
       method: 'PUT',
       headers,
       body,
       cache
     })
+
+    return response
   }
 
-  const patchRequest = (
+  const patchRequest = async (
     url: string,
     headers?: Headers,
     body?: Body,
     cache?: RequestCache
   ) => {
-    handleRequest({
+    const response = await handleRequest({
       url,
       method: 'PATCH',
       headers,
       body,
       cache
     })
+
+    return response
   }
 
-  const deleteRequest = (
+  const deleteRequest = async (
     url: string,
     headers?: Headers,
     cache?: RequestCache
   ) => {
-    handleRequest({
+    const response = await handleRequest({
       url,
       method: 'DELETE',
       headers,
       cache
     })
+
+    return response
   }
 
   return {
