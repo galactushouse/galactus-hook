@@ -1,7 +1,7 @@
 interface UseApiReturn {
-  get: () => void
-  post: () => void
-  put: () => void
-  patch: () => void
-  delete: () => void
+  getRequest: ({ url, headers, cache }: GetRequestProps) => void
+  postRequest: ({ url, headers, body, cache }: PostRequestProps) => void
+  putRequest: ({ url, headers, body, cache }: PutRequestProps) => void
+  patchRequest: ({ url, headers, body, cache }: PatchRequestProps) => void
+  deleteRequest: ({ url, headers, cache }: DeleteRequestProps) => void
 }
