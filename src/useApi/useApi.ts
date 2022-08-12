@@ -18,15 +18,11 @@ const useApi = (): UseApiReturn => {
       cache: !!cache ? cache : 'default'
     })
       .then((response: Response) => {
-        if (response.status !== 200 && response.status !== 204) {
+        if (response.status !== 200 && response.status !== 201) {
           return console.error(
             'Error when trying to make a request to the API: ',
             response
           )
-        }
-
-        if (response.status === 204) {
-          return
         }
 
         return response.json()
@@ -38,11 +34,7 @@ const useApi = (): UseApiReturn => {
     return response
   }
 
-  const getRequest = async (
-    url: string,
-    headers?: Headers,
-    cache?: RequestCache
-  ) => {
+  const getRequest = async ({ url, headers, cache }: GetRequestProps) => {
     const response = await handleRequest({
       url,
       method: 'GET',
@@ -53,12 +45,12 @@ const useApi = (): UseApiReturn => {
     return response
   }
 
-  const postRequest = async (
-    url: string,
-    headers?: Headers,
-    body?: Body,
-    cache?: RequestCache
-  ) => {
+  const postRequest = async ({
+    url,
+    headers,
+    body,
+    cache
+  }: PostRequestProps) => {
     const response = await handleRequest({
       url,
       method: 'POST',
@@ -70,12 +62,7 @@ const useApi = (): UseApiReturn => {
     return response
   }
 
-  const putRequest = async (
-    url: string,
-    headers?: Headers,
-    body?: Body,
-    cache?: RequestCache
-  ) => {
+  const putRequest = async ({ url, headers, body, cache }: PutRequestProps) => {
     const response = await handleRequest({
       url,
       method: 'PUT',
@@ -87,12 +74,12 @@ const useApi = (): UseApiReturn => {
     return response
   }
 
-  const patchRequest = async (
-    url: string,
-    headers?: Headers,
-    body?: Body,
-    cache?: RequestCache
-  ) => {
+  const patchRequest = async ({
+    url,
+    headers,
+    body,
+    cache
+  }: PatchRequestProps) => {
     const response = await handleRequest({
       url,
       method: 'PATCH',
@@ -104,11 +91,7 @@ const useApi = (): UseApiReturn => {
     return response
   }
 
-  const deleteRequest = async (
-    url: string,
-    headers?: Headers,
-    cache?: RequestCache
-  ) => {
+  const deleteRequest = async ({ url, headers, cache }: DeleteRequestProps) => {
     const response = await handleRequest({
       url,
       method: 'DELETE',
