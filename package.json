@@ -1,6 +1,6 @@
 {
   "name": "@galactushouse/galactus-hook",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Galactus House <galactushouse@gmail.com> (https://github.com/galactushouse)",
@@ -28,7 +28,7 @@
     "react",
     "npm"
   ],
-  "peerDependencies": {
+  "dependencies": {
     "react": "^18.2.0"
   },
   "devDependencies": {
