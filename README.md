@@ -30,12 +30,14 @@ import { useLocalStorage } from '@galactushouse/galactus-hook'
 
 Access the specific documentation for each hook to learn more about its features:
 
+* [useApi](https://github.com/galactushouse/galactus-hook/tree/master/src/useApi#readme)
 * [useLocalStorage](https://github.com/galactushouse/galactus-hook/tree/master/src/useLocalStorage#readme)
 
 ## Hook table
 
 | Hook | Functions | Description |
 | --- | --- | --- |
+| `useApi` | `getRequest` `postRequest` `putRequest` `patchRequest` `deleteRequest` | Hook with quick and easy functionality for full API consumption. The useApi hook works with the GET, POST, PUT, PATCH and DELETE methods. |
 | `useLocalStorage` | `addLocalStorage` `editLocalStorage` `readLocalStorage` `removeLocalStorage` | Hook with quick and easy functionality to create, edit, access and remove information in the browser's local storage. |
 
 ## Contribute
