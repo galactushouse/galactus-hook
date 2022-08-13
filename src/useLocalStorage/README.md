@@ -18,7 +18,7 @@ yarn add @galactushouse/galactus-hook
 
 ## Usage
 
-Import the useLocalStorage hook from the library into your component:
+Import the `useLocalStorage` hook from the library into your component:
 
 ```javascript
 import { useLocalStorage } from '@galactushouse/galactus-hook'
@@ -51,8 +51,7 @@ Using the `addLocalStorage` function you can save data to the browser's local st
 | `value` | `unknown` | ✓ | Value to be saved in local storage. |
 
 ```javascript
-import React, { useState } from 'react'
-
+import { useState } from 'react'
 import { useLocalStorage } from '@galactushouse/galactus-hook'
 
 const MyComponent = () => {
@@ -97,8 +96,7 @@ Using the `editLocalStorage` function you can edit data already saved in the bro
 | `value` | `unknown` | ✓ | Value to edit in local storage. |
 
 ```javascript
-import React, { useState } from 'react'
-
+import { useState } from 'react'
 import { useLocalStorage } from '@galactushouse/galactus-hook'
 
 const MyComponent = () => {
@@ -131,8 +129,7 @@ Using the `readLocalStorage` function you can fetch data already saved in the br
 | `key` | `string` | ✓ | Key name referring to the data to be fetched from local storage. |
 
 ```javascript
-import React, { useState } from 'react'
-
+import { useState } from 'react'
 import { useLocalStorage } from '@galactushouse/galactus-hook'
 
 const MyComponent = () => {
