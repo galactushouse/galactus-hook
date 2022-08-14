@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2022-08-14
+
+### Added
+
+- Added useLocation hook.
+
+- Added useLocation documentation.
+
 ## [1.1.0] - 2022-08-13
 
 ### Added
