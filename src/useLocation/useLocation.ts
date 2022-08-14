@@ -12,12 +12,10 @@ const useLocation = (): UseLocationReturn => {
       return
     }
 
-    return (window.location[name] = value)
+    window.location[name] = value
   }
 
-  return {
-    getLocation
-  }
+  return { getLocation, setLocation }
 }
 
 export default useLocation
