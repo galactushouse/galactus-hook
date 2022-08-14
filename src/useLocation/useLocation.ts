@@ -7,7 +7,9 @@ const useLocation = (): UseLocationReturn => {
     return window.location[name]
   }
 
-  return {}
+  return {
+    getLocation
+  }
 }
 
 export default useLocation
