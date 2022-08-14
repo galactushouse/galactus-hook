@@ -1,4 +1,4 @@
 interface UseLocationReturn {
-  getLocation: ({ name }: GetLocationProps) => void
-  setLocation: ({ name, value }: SetLocationProps) => void
+  getLocation: (name: LocationName['name']) => void
+  setLocation: (name: LocationName['name'], value: string) => void
 }

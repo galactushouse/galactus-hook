@@ -1,5 +1,5 @@
 const useLocation = (): UseLocationReturn => {
-  const getLocation = ({ name }: GetLocationProps) => {
+  const getLocation = (name: LocationName['name']) => {
     if (!window) {
       return
     }
@@ -7,7 +7,7 @@ const useLocation = (): UseLocationReturn => {
     return window.location[name]
   }
 
-  const setLocation = ({ name, value }: SetLocationProps) => {
+  const setLocation = (name: LocationName['name'], value: string) => {
     if (!window) {
       return
     }
