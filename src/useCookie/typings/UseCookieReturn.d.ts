@@ -1,1 +1,3 @@
-interface UseCookieReturn {}
+interface UseCookieReturn {
+  getCookie: (name: string) => void
+}
