@@ -20,7 +20,11 @@ const useCookie = (): UseCookieReturn => {
     document.cookie = `${name}=${value}; ${expirationDate}; path=/`
   }
 
-  return { getCookie, setCookie }
+  const deleteCookie = (name: string) => {
+    document.cookie = `${name}=''; expires=Thu, 01 Jan 2000 00:00:00 GMT; path=''`
+  }
+
+  return { getCookie, setCookie, deleteCookie }
 }
 
 export default useCookie
