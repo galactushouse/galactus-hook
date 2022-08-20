@@ -11,9 +11,10 @@ const useCookie = (): UseCookieReturn => {
     return separateCookies[name]
   }
 
-  const setCookie = (name: string, value: string, daysToExpire: number) => {
+  const setCookie = (name: string, value: string, daysToExpire?: number) => {
     const expirationDate = `expires=${new Date(
-      new Date().getTime() + daysToExpire * 24 * 60 * 60 * 1000
+      new Date().getTime() +
+        (daysToExpire ? daysToExpire : 30) * 24 * 60 * 60 * 1000
     )}`
 
     document.cookie = `${name}=${value}; ${expirationDate}; path=/`
