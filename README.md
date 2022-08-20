@@ -26,19 +26,21 @@ Import one or more hooks chosen from the library into your component and use the
 import { useLocalStorage } from '@galactushouse/galactus-hook'
 ```
 
-## Summary
+## Hooks documentation
 
 Access the specific documentation for each hook to learn more about its features:
 
 * [useApi](https://github.com/galactushouse/galactus-hook/tree/master/src/useApi#readme)
+* [useCookie](https://github.com/galactushouse/galactus-hook/tree/master/src/useCookie#readme)
 * [useLocalStorage](https://github.com/galactushouse/galactus-hook/tree/master/src/useLocalStorage#readme)
 * [useLocation](https://github.com/galactushouse/galactus-hook/tree/master/src/useLocation#readme)
 
-## Hook table
+## Hooks details
 
 | Hook | Functions | Description |
 | --- | --- | --- |
 | `useApi` | `getRequest` `postRequest` `putRequest` `patchRequest` `deleteRequest` | Hook with quick and easy functionality for full API consumption. The useApi hook works with the GET, POST, PUT, PATCH and DELETE methods. |
+| `useCookie` | `getCookie` `setCookie` `deleteCookie` | Hook with quick and easy functionality to manage cookies for your web applications. |
 | `useLocalStorage` | `addLocalStorage` `editLocalStorage` `readLocalStorage` `removeLocalStorage` | Hook with quick and easy functionality to create, edit, access and remove information in the browser's local storage. |
 | `useLocation` | `getLocation` `setLocation` | Hook with quick and easy functionality for accessing window.location, giving you full possibilities of reading and changing its properties, generating navigation autonomy for your web application. |
 
