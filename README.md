@@ -34,15 +34,17 @@ Access the specific documentation for each hook to learn more about its features
 * [useCookie](https://github.com/galactushouse/galactus-hook/tree/master/src/useCookie#readme)
 * [useLocalStorage](https://github.com/galactushouse/galactus-hook/tree/master/src/useLocalStorage#readme)
 * [useLocation](https://github.com/galactushouse/galactus-hook/tree/master/src/useLocation#readme)
+* [useWindowScroll](https://github.com/galactushouse/galactus-hook/tree/master/src/useWindowScroll#readme)
 
 ## Hooks details
 
-| Hook | Functions | Description |
+| Hook | Functions / Variables | Description |
 | --- | --- | --- |
 | `useApi` | `getRequest` `postRequest` `putRequest` `patchRequest` `deleteRequest` | Hook with quick and easy functionality for full API consumption. The useApi hook works with the GET, POST, PUT, PATCH and DELETE methods. |
 | `useCookie` | `getCookie` `setCookie` `deleteCookie` | Hook with quick and easy functionality to manage cookies for your web applications. |
 | `useLocalStorage` | `addLocalStorage` `editLocalStorage` `readLocalStorage` `removeLocalStorage` | Hook with quick and easy functionality to create, edit, access and remove information in the browser's local storage. |
 | `useLocation` | `getLocation` `setLocation` | Hook with quick and easy functionality for accessing window.location, giving you full possibilities of reading and changing its properties, generating navigation autonomy for your web application. |
+| `useWindowScroll` | `positionX` `positionY` | Hook with quick and easy functionality to access the horizontal and vertical position of the scroll in your application. |
 
 ## Contribute
 
@@ -56,4 +58,4 @@ To contribute to the `galactus-hook` project follow the steps mentioned below:
 
 ## Licensed
 
-This project is MIT licensed.
+GalactusHook is [MIT](https://github.com/galactushouse/galactus-hook/blob/master/LICENSE) licensed.
