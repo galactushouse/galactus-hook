@@ -1,6 +1,6 @@
 {
   "name": "@galactushouse/galactus-hook",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Galactus House <galactushouse@gmail.com> (https://github.com/galactushouse)",
