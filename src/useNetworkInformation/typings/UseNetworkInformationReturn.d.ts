@@ -1,1 +1,3 @@
-interface UseNetworkInformationReturn {}
+interface UseNetworkInformationReturn {
+  network: {} | undefined
+}
